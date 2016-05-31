@@ -83,7 +83,7 @@ public class LocationService extends Service implements
     protected void sendLocationDataToWebsite(Location location) {
         // formatted for mysql datetime format
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        dateFormat.setTimeZone(TimeZone.getDefault());
+        dateFormat.setTimeZone(TimeZone.getTimeZone("gmt"));
         Date date = new Date(location.getTime());
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.websmithing.gpstracker.prefs", Context.MODE_PRIVATE);
